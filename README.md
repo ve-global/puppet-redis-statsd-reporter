@@ -1,6 +1,6 @@
-# puppet-redis-statsd-reporter
+# puppet-redis_statsd_reporter
 
-[![Build Status](https://travis-ci.org/andyroyle/puppet-redis-statsd-reporter.png)](https://travis-ci.org/andyroyle/puppet-redis-statsd-reporter) [![Puppet Forge](http://img.shields.io/puppetforge/v/andyroyle/redis-statsd-reporter.svg?style=flat)](https://forge.puppetlabs.com/andyroyle/redis-statsd-reporter)
+[![Build Status](https://travis-ci.org/andyroyle/puppet-redis-statsd-reporter.png)](https://travis-ci.org/andyroyle/puppet-redis-statsd-reporter) [![Puppet Forge](http://img.shields.io/puppetforge/v/andyroyle/redis_statsd_reporter.svg?style=flat)](https://forge.puppetlabs.com/andyroyle/redis_statsd_reporter)
 
 ## Description
 
@@ -8,7 +8,7 @@ This Puppet module will install [redis-statsd-reporter](https://github.com/andyr
 
 ## Installation
 
-`puppet module install --modulepath /path/to/puppet/modules andyroyle-redis-statsd-reporter`
+`puppet module install --modulepath /path/to/puppet/modules andyroyle-redis_statsd_reporter`
 
 ## Requirements
 
@@ -16,7 +16,7 @@ This module assumes nodejs & npm is installed on the host, but will not do it fo
 
 ## Usage
 ```puppet
-    class { 'redis-statsd-reporter':
+    class { 'redis_statsd_reporter':
       servers => [
         {
           host => 'my.redis.1.domain.com',
