@@ -1,0 +1,11 @@
+# HEADER: This file is being managed by Puppet. Any manual changes to this file
+# will be overwritten.
+
+<% @environment.each do |val| -%>
+<%= val %>
+<% end -%>
+NODEJS="<%= @nodejs_bin %>"
+RPTJS="<%= @reporterjs %>"
+RSRPT_CONFIG_DIR="<%= @configdir %>"
+RSRPT_LOGFILE="<%= @logfile %>"
+DAEMON_ARGS="$RPTJS $RSPRT_CONFIG_DIR $RSRPT_LOGFILE"

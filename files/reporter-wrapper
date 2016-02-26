@@ -1,0 +1,40 @@
+#!/bin/bash
+
+if [ "$#" -lt 2 ]; then
+  echo "Usage: $(basename $0) /path/to/index.js /path/to/configdir path/to/logfile" >&2
+  exit 1
+fi
+
+RPTJS=$1
+CONFIGDIR=$2
+LOGFILE=$3
+
+
+NODE=$(which nodejs 2>/dev/null|| which node 2>/dev/null)
+
+if ! [ -x "$NODE" ]; then
+  echo "Unable to run node  '${NODE}' cannot be executed" >&2
+  exit 255
+fi
+
+if ! [ -r "$RPTJS" ]; then
+  echo "Unable to read '$RPTJS' - file is either missing or unreadable"
+  exit 255
+fi
+
+if ! [ -r "$CONFIGDIR" ]; then
+  echo "Unable to read '$CONFIGDIR' - file is either missing or unreadable"
+  exit 255
+fi
+
+exec 3>&2
+if [ -n "$LOGFILE" ]; then
+  exec 1>>$LOGFILE
+  exec 2>>$LOGFILE
+fi
+
+echo "Running $CONFIGDIR $NODE $RPTJS"
+exec $NODE $RPTJS $CONFIGDIR
+
+echo "Unable to execute ${CONFIGDIR} ${NODE} ${RPTJS}!" >&3
+exit 1

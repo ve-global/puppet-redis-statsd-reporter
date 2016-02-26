@@ -1,0 +1,45 @@
+{
+  "name": "andyroyle-redis-statsd-reporter",
+  "version": "1.0.0",
+  "source": "https://github.com/andyroyle/puppet-redis-statsd-reporter",
+  "author": "Andy Royle",
+  "license": "Apache-2.0",
+  "summary": "Setup and manage redis-statsd-reporter",
+  "description": "Setup and manage redis-statsd-reporter",
+  "project_page": "https://github.com/andyroyle/puppet-redis-statsd-reporter",
+  "source": "https://github.com/andyroyle/puppet-redis-statsd-reporter.git",
+  "issues_url": "https://github.com/andyroyle/puppet-redis-statsd-reporter/issues",
+  "dependencies": [
+    { "name": "puppetlabs/stdlib", "version_requirement": ">=4.1.0 <5.0.0" }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [ "5", "6", "7" ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [ "5", "6", "7" ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [ "5", "6", "7" ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [ "5", "6", "7" ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [ "6", "7" ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [ "10.04", "12.04", "14.04", "15.04" ]
+    }
+  ],
+  "requirements": [
+    { "name": "pe", "version_requirement": ">=3.0.0" },
+    { "name": "puppet", "version_requirement": ">=3.0.0" }
+  ]
+}

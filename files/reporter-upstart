@@ -1,0 +1,20 @@
+# redis-statsd-reporter - Report redis metrics to statsd
+#
+# This is a daemon that polls one or more redis instances and
+# sends the metrics to statsd
+#
+description "Report redis metrics to statsd"
+author      "Andy Royle"
+
+start on (local-filesystems and net-device-up IFACE!=lo)
+
+respawn
+respawn limit 10 5
+
+setuid nobody
+setgid nogroup
+
+script
+    . /etc/default/redis-statsd-reporter
+    exec $NODEJS $RPTJS $RSRPT_CONFIG_DIR >> $RSRPT_LOGFILE
+end script

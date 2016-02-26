@@ -1,0 +1,12 @@
+[
+  <% @servers.each do |server| -%>
+    {
+      "host": "<%= server['host'] %>",
+      "port": <%= server['port'] || 6379 %>,
+      <% if server['tags'] -%>
+      "tags": <%= server['tags'].to_json %>,
+      <% end -%>
+      "prefix": "<%= server['prefix'] || '' %>"
+    }
+  <% end -%>
+]
