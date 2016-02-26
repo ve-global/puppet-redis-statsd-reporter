@@ -3,6 +3,9 @@
     {
       "host": "<%= server['host'] %>",
       "port": <%= server['port'] || 6379 %>,
+      <% if server['password'] -%>
+      "password": <%= server['password'] %>,
+      <% end -%>
       <% if server['tags'] -%>
       "tags": <%= server['tags'].to_json %>,
       <% end -%>
