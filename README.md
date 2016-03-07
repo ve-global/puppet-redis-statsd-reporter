@@ -19,17 +19,18 @@ This module assumes nodejs & npm is installed on the host, but will not do it fo
     class { 'redis_statsd_reporter':
       servers => [
         {
-          host => 'my.redis.1.domain.com',
-          port => 6379,                 # default 6379
-          tags => {                     # tags are only supported by influxdb backend
+          host     => 'my.redis.1.domain.com',
+          port     => 6379,                 # default 6379
+          tags     => {                     # tags are only supported by influxdb backend
             foo => 'bar'
           },
-          prefix => 'foo.bar.redis.yay' # prefix to apply to the metric name
+          prefix   => 'foo.bar.redis.yay' # prefix to apply to the metric name
+          password => 'foobar'
         }
       ],
       statsd => {
-        host: 'localhost',
-        port: 8125,
+        host     => 'localhost',
+        port     => 8125,
         interval => 10 # interval in seconds to send metrics
       }
     }
