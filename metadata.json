@@ -1,6 +1,6 @@
 {
   "name": "andyroyle-redis_statsd_reporter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "source": "https://github.com/andyroyle/puppet-redis-statsd-reporter",
   "author": "Andy Royle",
   "license": "Apache-2.0",
