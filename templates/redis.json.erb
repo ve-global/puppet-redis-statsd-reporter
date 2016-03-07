@@ -1,5 +1,5 @@
 [
-  <% @servers.each do |server| -%>
+  <% @servers.each_with_index do |server, i| -%>
     {
       "host": "<%= server['host'] %>",
       "port": <%= server['port'] || 6379 %>,
@@ -11,5 +11,8 @@
       <% end -%>
       "prefix": "<%= server['prefix'] || '' %>"
     }
+    <% if @servers.length > 1 && i != (@servers.length - 1) -%>
+      ,
+    <% end -%>
   <% end -%>
 ]
