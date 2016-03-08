@@ -4,7 +4,7 @@ case $operatingsystem {
   default: { notify { 'unsupported os!': }}
 }
 
-class { 'nodejs': manage_package_repo => true, repo_url_suffix => 'node_5.x', }->
+class { 'nodejs': manage_package_repo => true, repo_url_suffix => '5.x', }->
 class { 'redis_statsd_reporter':
   servers => [
     {
