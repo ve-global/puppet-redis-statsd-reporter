@@ -11,6 +11,9 @@
       <% if server['tags'] -%>
       "tags": <%= server['tags'].to_json %>,
       <% end -%>
+      <% if server['keyCounters'] -%>
+      "keyCounters": <%= server['keyCounters'].to_json %>,
+      <% end -%>
       "prefix": "<%= server['prefix'] || '' %>"
     }
     <% if @servers.length > 1 && i != (@servers.length - 1) -%>
