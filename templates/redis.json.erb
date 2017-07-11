@@ -12,7 +12,7 @@
       "tags": <%= server['tags'].to_json %>,
       <% end -%>
       <% if server['keyCounters'] -%>
-      "keyCounters": <%= server['keyCounter'].to_json %>,
+      "keyCounters": <%= server['keyCounters'].to_json %>,
       <% end -%>
       "prefix": "<%= server['prefix'] || '' %>"
     }
